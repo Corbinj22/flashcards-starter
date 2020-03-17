@@ -21,11 +21,11 @@ class Turn {
   };
 
   giveFeedback() {
-    // if (evaluteGuess) {
-    //   return "Correct!"
-    // } else {
-    //   return "Incorrect!"
-    // }
+    if (this.evaluteGuess()) {
+      return "Correct!"
+    } else {
+      return "Incorrect!"
+    }
   };
 
 };
