@@ -17,7 +17,6 @@ describe('Turn', function() {
     expect(turn).to.be.an.instanceof(Deck);
   });
 
-
   it('should start with a full deck of cards', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
