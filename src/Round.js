@@ -21,18 +21,16 @@ class Round {
     turn.status = turnStatus.guessFeedback;
     this.turns++;
 
-    const shiftedCard = this.deck.cards.shift();
 
     if(turnStatus.guessStatus === false && this.deck.cards[0]) {
       this.incorrectGuesses.push(this.deck.cards[0].id)
     }
+    const shiftedCard = this.deck.cards.shift();
 
     return turn
   };
 
   calculatePercentCorrect() {
-    console.log('turn', this.turns);
-    console.log('length', this.incorrectGuesses.length);
     const correctPercentage = Math.trunc((this.turns - this.incorrectGuesses.length) / this.turns * 100);
     return correctPercentage;
   };

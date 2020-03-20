@@ -5,7 +5,7 @@ let app = http.createServer();
 app.listen(3000, '127.0.0.1');
 console.log('Node server running on port 3000');
 
-const Game = require('/Users/justincorbin/turing/mod2/flashcards-starter/src/Game.js');
+const Game = require('./src/Game.js');
 const newGame = new Game;
 
 newGame.start();
