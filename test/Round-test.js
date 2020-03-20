@@ -109,7 +109,7 @@ describe('Round', function() {
     assert.equal(round.turns, 3);
   });
 
-  it.skip('should have a new current card', function() {
+  it.skip('should be able to return current card', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -117,10 +117,11 @@ describe('Round', function() {
     const round = new Round(deck)
 
     round.takeTurn('sea otter');
+    round.takeTurn('appendix');
 
     const current = round.returnCurrentCard()
 
-    assert.equal(current, card2)
+    assert.equal(current, card3)
   });
 
   it.skip('should be able to evaluate guesses', function() {
@@ -178,7 +179,6 @@ describe('Round', function() {
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
     const deck = new Deck([card1, card2, card3])
     const round = new Round(deck)
-
 
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');

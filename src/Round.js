@@ -18,15 +18,14 @@ class Round {
       guessFeedback : turn.giveFeedback()
     };
 
+    turn.status = turnStatus.guessFeedback;
     this.turns++;
 
     const shiftedCard = this.deck.cards.shift();
-    this.deck.cards.push(shiftedCard);
 
     turnStatus.guessStatus === false ? this.incorrectGuesses.push(this.deck.cards[0].id) : undefined;
 
-
-    return {turnStatus, turn};
+    return turn
   };
 
   calculatePercentCorrect() {
@@ -35,10 +34,9 @@ class Round {
   };
 
   endRound() {
-    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
-
+    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
   };
 
-}
+};
 
 module.exports = Round;
