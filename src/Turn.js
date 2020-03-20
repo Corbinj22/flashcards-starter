@@ -3,15 +3,15 @@ class Turn {
     this.userGuess = userGuess;
     this.currentCard = card
     this.status = null;
-  };
+  }
 
   returnGuess() {
     return this.userGuess;
-  };
+  }
 
   returnCard() {
     return this.currentCard
-  };
+  }
 
   evaluteGuess() {
     if (this.userGuess === this.currentCard.correctAnswer) {
@@ -19,7 +19,7 @@ class Turn {
     } else {
       return false;
     }
-  };
+  }
 
   giveFeedback() {
     if (this.evaluteGuess()) {
@@ -27,9 +27,9 @@ class Turn {
     } else {
       return "Incorrect!"
     }
-  };
+  }
 
-};
+}
 
 
 module.exports = Turn;

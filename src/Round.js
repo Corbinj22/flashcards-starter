@@ -14,31 +14,30 @@ class Round {
   takeTurn(guess) {
     const turn = new Turn(guess, this.returnCurrentCard());
     const turnStatus = {
-      guessStatus : turn.evaluteGuess(),
-      guessFeedback : turn.giveFeedback()
+      guessStatus: turn.evaluteGuess(),
+      guessFeedback: turn.giveFeedback()
     };
-
     turn.status = turnStatus.guessFeedback;
     this.turns++;
 
-
-    if(turnStatus.guessStatus === false && this.deck.cards[0]) {
+    if (turnStatus.guessStatus === false && this.deck.cards[0]) {
       this.incorrectGuesses.push(this.deck.cards[0].id)
     }
-    const shiftedCard = this.deck.cards.shift();
+
+    this.deck.cards.shift();
 
     return turn
-  };
+  }
 
   calculatePercentCorrect() {
     const correctPercentage = Math.trunc((this.turns - this.incorrectGuesses.length) / this.turns * 100);
     return correctPercentage;
-  };
+  }
 
   endRound() {
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
-  };
+  }
 
-};
+}
 
 module.exports = Round;

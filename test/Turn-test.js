@@ -9,7 +9,7 @@ describe('Turn', function() {
   it('should be a function', function() {
     const turn = new Turn();
 
-    expect(Turn).to.be.a('function');
+    expect(turn).to.be.a('function');
   });
 
   it('should be an instance of Turn', function() {

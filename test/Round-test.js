@@ -3,7 +3,6 @@ const expect = chai.expect;
 const assert = require('chai').assert;
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
-const Turn = require('../src/Turn');
 const Round = require('../src/Round');
 
 describe('Round', function() {
@@ -11,7 +10,7 @@ describe('Round', function() {
   it.skip('should be a function', function() {
     const round = new Round();
 
-    expect(Round).to.be.a('function');
+    expect(round).to.be.a('function');
   });
 
   it.skip('should be an instance of round', function() {
@@ -25,7 +24,6 @@ describe('Round', function() {
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
     const deck = new Deck([card1, card2, card3])
-    const round = new Round(deck)
 
     expect(deck.cards).to.have.deep.members([card1, card2, card3]);
   });
@@ -37,7 +35,7 @@ describe('Round', function() {
     const deck = new Deck([card1, card2, card3])
     const round = new Round(deck)
 
-      assert.equal(round.turns, 0);
+    assert.equal(round.turns, 0);
   });
 
   it.skip('should store be able to store incorrect guesses', function() {
@@ -47,7 +45,7 @@ describe('Round', function() {
     const deck = new Deck([card1, card2, card3])
     const round = new Round(deck)
 
-      assert.deepEqual(round.incorrectGuesses, []);
+    assert.deepEqual(round.incorrectGuesses, []);
   });
 
   it.skip('should be able to keep track of the current card', function() {
@@ -170,7 +168,7 @@ describe('Round', function() {
     round.takeTurn('pug');
     round.takeTurn('gallbladder');
     const correctPercentage = round.calculatePercentCorrect()
-    assert.equal(correctPercentage , 50)
+    assert.equal(correctPercentage, 50)
   })
 
   it.skip('should notify the user what percentage they got right', function() {
@@ -186,7 +184,7 @@ describe('Round', function() {
 
     const correctPercentage = round.endRound()
 
-    assert.equal(correctPercentage ,'** Round over! ** You answered 100% of the questions correctly!')
+    assert.equal(correctPercentage, '** Round over! ** You answered 100% of the questions correctly!')
   });
 
 });

@@ -8,7 +8,7 @@ describe('Card', function() {
   it('should be a function', function() {
     const card = new Card();
 
-    expect(Card).to.be.a('function');
+    expect(card).to.be.a('function');
   });
 
   it('should be an instance of Card', function() {
@@ -34,5 +34,5 @@ describe('Card', function() {
 
     expect(card.correctAnswer).to.equal('object');
   });
-  
+
 });

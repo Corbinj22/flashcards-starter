@@ -6,15 +6,15 @@ const Deck = require('../src/Deck');
 
 describe('Turn', function() {
   it('should be a function', function() {
-    const turn = new Deck();
+    const deck = new Deck();
 
-    expect(Deck).to.be.a('function');
+    expect(deck).to.be.a('function');
   });
 
   it('should be an instance of Deck', function() {
-    const turn = new Deck();
+    const deck = new Deck();
 
-    expect(turn).to.be.an.instanceof(Deck);
+    expect(deck).to.be.an.instanceof(Deck);
   });
 
   it('should start with a full deck of cards', function() {
